@@ -16,3 +16,8 @@ Todas as instâncias precisam de um security group que viabilize os testes de ac
 ### Perguntas: 
 - O que é CIDR ?
 - Qual a função das route tables, IGW e NATGW ? 
+
+
+### Solução
+
+Acesse [aqui](solution.md) a solução proposta.
