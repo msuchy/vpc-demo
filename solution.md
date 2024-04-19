@@ -52,7 +52,6 @@ A public subnet is associated with a route table that has a route to the Interne
 |---|---|---|---|
 |Public-RT|10.0.0.0/16|local|Local traffic within the VPC|
 |Public-RT|0.0.0.0/0|IGW|Internet Gateway|
-|
 |Private-RT|10.0.0.0/16|local|Local traffic within the VPC|
 |Private-RT|0.0.0.0/0|NATGW|NAT Gateway|
 
@@ -71,7 +70,6 @@ The access to public instances is open to the internet.
 |
 |SG-App|10.0.0.0/24|TCP|23|telnet|
 |SG-App|10.0.0.0/24|ICMP|*|ping|
-|
 |SG-Resources|10.0.12.0/22|TCP|5432|PostgreSQL|
 |SG-Resources|10.0.12.0/22|ICMP|*|ping|
 |SG-Resources|10.0.12.0/22|TCP|23|telnet|
