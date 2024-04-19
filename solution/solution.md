@@ -6,18 +6,18 @@ The proposed solution is based on the multi-tier architecture pattern, where the
 
 The diagram below shows the proposed solution:
 
-![Solution](./solution.png)
+![Solution](./images/solution.png)
 
 This is a very common pattern in cloud computing, as it allows for a clear separation of concerns and a better security posture; since the public layer is the only one that has direct access to the internet, the private layer can only communicate with the public layer, and the data layer can only communicate with the private layer.
 
 
-<img src="./multi-tier-pattern.png" width="300" />
+<img src="./images/multi-tier-pattern.png" width="400" />
 
 ## Design
 
 ### CIDR Specification
 
-As specified in the requirements, the VPC will be a 10.0.0.0/16 [CIDR](cidr.md) block, which allows for 65,536 IP addresses.
+As specified in the requirements, the VPC will be a 10.0.0.0/16 [CIDR](https://aws.amazon.com/what-is/cidr/?nc1=h_ls) block, which allows for 65,536 IP addresses.
 
 
 Each subnet will use subranges of the VPC CIDR block, as follows:
@@ -87,17 +87,16 @@ This can be achieved by adding an Application Load Balancer to distribute the tr
 
 The security groups will need to be updated to allow traffic between the instances in the different AZs.
 
-![Solution](./multi-az.png)
+![Solution](./images/multi-az.png)
 
 
 ## Steps
 
-Access the [steps.md](./steps.md) file to see the detailed steps to implement the proposed solution.
+Detailed [steps](./steps.md) to implement the proposed solution.
 
 ## Validations
 
-Access the [validations.md](./validations.md) file to see screenshots of the solution implemented in AWS.
-
+[Screenshots](./validations.md) to validate the solution implemented in AWS.
 
 
 Disclaimer

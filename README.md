@@ -20,4 +20,4 @@ Todas as instâncias precisam de um security group que viabilize os testes de ac
 
 ### Solução
 
-Acesse [aqui](solution.md) a solução proposta.
+Acesse [aqui](./solution/solution.md) a solução proposta.
