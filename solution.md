@@ -10,7 +10,8 @@ The diagram below shows the proposed solution:
 
 This is a very common pattern in cloud computing, as it allows for a clear separation of concerns and a better security posture; since the public layer is the only one that has direct access to the internet, the private layer can only communicate with the public layer, and the data layer can only communicate with the private layer.
 
-![multi-tier](./multi-tier-pattern.png | width=100)
+
+<img src="./multi-tier-pattern.png" width="300" />
 
 ## Design
 
