@@ -67,12 +67,12 @@ The access to public instances is open to the internet.
 #### Inbound Rules:
 |Security Group| Source | Protocol | Port | Description |
 |---|---|---|---|---|
-|SG-public|0.0.0.0/0|TCP|22|SSH|
-|SG-App|10.0.0.0/24|TCP|23|telnet|
-|SG-App|10.0.0.0/24|ICMP|*|ping|
-|SG-Resources|10.0.12.0/22|TCP|5432|PostgreSQL|
-|SG-Resources|10.0.12.0/22|ICMP|*|ping|
-|SG-Resources|10.0.12.0/22|TCP|23|telnet|
+|public-sg|0.0.0.0/0|ICMP|*|ping|
+|public-sg|0.0.0.0/0|TCP|22|ssh|
+|app-sg|10.0.0.0/24|TCP|22|ssh|
+|app-sg|10.0.0.0/24|ICMP|*|ping|
+|resources-sg|10.0.12.0/22|TCP|5432|PostgreSQL|
+|resources-sg|10.0.12.0/22|ICMP|*|ping|
 
 #### Outubound Rules:
 
@@ -88,3 +88,8 @@ This can be achieved by adding an Application Load Balancer to distribute the tr
 The security groups will need to be updated to allow traffic between the instances in the different AZs.
 
 ![Solution](./multi-az.png)
+
+
+## Steps
+
+Access the [steps.md](./steps.md) file to see the detailed steps to implement the proposed solution.

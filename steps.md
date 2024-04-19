@@ -1,54 +1,46 @@
 1. Create VPC
    - vpc-meg-test 10.0.0.0/16
-2. Create Subnets
+1. Create Subnets
    - sb-public 10.0.0.0/24
    - sb-pvt-app 10.0.12.0/22
    - sb-pvt-resources 10.0.4.0/23
-3. Create Internet Gateway
-4. Attach igw-meg-test to vpc-meg-test
-5. Create Route Table
+1. Create Internet Gateway - igw-meg-test
+1. Attach igw-meg-test to vpc-meg-test
+1. Create Route Table
    - rt-public
-6. Add route to rt-public
+1. Add route to rt-public
    - 0.0.0.0/0 -> igw-meg-test
-7. Attach rt-public to sb-public
-8. Create Route Table
-   - rt-private
-9. Attach rt-private to sb-pvt-app
-10. Attach rt-private to sb-pvt-resources
-11. Create nat-gateway on sb-public
+1. Attach rt-public to sb-public
+1. Create nat-gateway on sb-public
    - nat-meg-test
    - public connectivity
-12. Add route to rt-private
+1. Create Route Table
+   - rt-private
+1. Add route to rt-private
    - 0.0.0.0/0 -> nat-meg-test
-13. Add security group
-   - meg-test
-   - IN
-      - TCP 23
-      - ICMP all
-   - OUT
-      - HTTP
-      - HTTPS
-14. Launch EC2 jump box on sb-public
-    - sg -> meg-test
-    - Auto assign public ip
+1. Attach rt-private to sb-pvt-app
+1. Attach rt-private to sb-pvt-resources
+1. Create Security Groups
+- public-sg
+- app-sg
+- resources-sg
+1. Launch EC2 jump box on sb-public
+   - sg -> public-sg
+   - Auto assign public ip
+   - connect throught ssh
+      - `ssh -i "my-pem.pem" ec2-user@3.91.198.190`
 
-    - telnet is not installed by default on AMI
-
-    - connect throught ssh
-
-      - ssh -i "meg.pem" ec2-user@3.91.198.190
-
-      - sudo yum install telnet-server
-      - sudo systemctl start telnet.socket
-      - sudo systemctl enable telnet.socket
-      - sudo systemctl status telnet.socket
-
-15. Launch EC2 on sb-pvt-app
-    - sg -> boti-test
+1. Launch EC2 on sb-pvt-app
+    - sg -> spp-sg
     - private ip
-
-
-
-
-    -- enable password
-    https://comtechies.com/password-authentication-aws-ec2.html
+    - install postgres client
+      - `sudo dnf install postgresql15`
+    - connect to postgres
+      - `psql --host=meg-db.c9s6gyei0l8h.us-east-1.rds.amazonaws.com --port=5432 --username=postgres --password --dbname=test`
+    - create table
+      - `create table test (id int, name varchar(20));`
+   - list table
+      - `\d`
+1. Launch RDS on sb-pvt-resources
+    - sg -> resources-sg
+    - private ip
