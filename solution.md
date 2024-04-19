@@ -67,7 +67,6 @@ The access to public instances is open to the internet.
 |Security Group| Source | Protocol | Port | Description |
 |---|---|---|---|---|
 |SG-public|0.0.0.0/0|TCP|22|SSH|
-|
 |SG-App|10.0.0.0/24|TCP|23|telnet|
 |SG-App|10.0.0.0/24|ICMP|*|ping|
 |SG-Resources|10.0.12.0/22|TCP|5432|PostgreSQL|
