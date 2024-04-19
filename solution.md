@@ -79,4 +79,12 @@ The access to public instances is open to the internet.
 All security groups allow all outbound traffic to all destinations.
 
 
+## Resilient Alternative
 
+To make the solution more resilient, we can duplicate the subnets in a different availability zone. This way, if one AZ fails, the resources can be automatically redirected to another AZ. 
+
+This can be achieved by adding an Application Load Balancer to distribute the traffic between the instances in the different AZs and enabling the data replication feature in the RDS instance.
+
+The security groups will need to be updated to allow traffic between the instances in the different AZs.
+
+![Solution](./multi-az.png)
