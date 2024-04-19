@@ -97,3 +97,9 @@ Access the [steps.md](./steps.md) file to see the detailed steps to implement th
 ## Validations
 
 Access the [validations.md](./validations.md) file to see screenshots of the solution implemented in AWS.
+
+
+
+Disclaimer
+
+> Since telnet is not recommended for security reasons, proposed solution and validation was done using ssh protocol instead. 
