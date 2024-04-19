@@ -93,3 +93,7 @@ The security groups will need to be updated to allow traffic between the instanc
 ## Steps
 
 Access the [steps.md](./steps.md) file to see the detailed steps to implement the proposed solution.
+
+## Validations
+
+Access the [validations.md](./validations.md) file to see screenshots of the solution implemented in AWS.
